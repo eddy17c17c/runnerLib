@@ -2,9 +2,9 @@ FROM node:14.9-slim
 
 WORKDIR /app
 
-COPY package.json /app/package.json
+COPY package.json /app
 
-COPY yarn.lock /app/yarn.lock
+COPY yarn.lock /app
 
 RUN cd /app \
     && apt-get update \
@@ -15,4 +15,4 @@ EXPOSE 3000
 
 COPY . /app
 
-CMD ["nodemon server.js"]
+CMD ["nodemon", "app.js"]
