@@ -6,7 +6,7 @@ COPY package.json /app/package.json
 
 COPY yarn.lock /app/yarn.lock
 
-RUN cd app \
+RUN cd /app \
     && apt-get update \
     && npm install -g nodemon \
     && yarn install
